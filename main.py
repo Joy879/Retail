@@ -115,10 +115,9 @@ if selection== 'Business Snapshot':
 #     df.head()
 #     # New vs Existing User Revenue Analysis
     df_new_revenue = df.groupby(["InvoiceMonth", "InvoiceYear", "UserType"])["Revenue"].sum().reset_index()
-    plt.figure()
-    sns.relplot(x="InvoiceMonth",
-     y="Revenue", hue="UserType", data=df_new_revenue, kind="line", height=12,
-                aspect=18 / 10)
+    plt.figure(15,10)
+    sns.lineplot(x="InvoiceMonth",
+     y="Revenue", hue="UserType", data=df_new_revenue)
     plt.title("New vs Existing Customer Revenue Overview")
     plt.xlabel("Month")
     plt.ylabel("Revenue")

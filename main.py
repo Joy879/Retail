@@ -41,8 +41,8 @@ else:
 
 # # Use the full page instead of a narrow central column
 
-df["InvoiceYear"] = pd.to_numeric(df["InvoiceYear"])
-df["InvoiceMonth"] = pd.to_numeric(df["InvoiceMonth"])
+df["InvoiceYear"] = df["InvoiceYear"].astype('float64')
+df["InvoiceMonth"] = df["InvoiceMonth"].astype('float64')
 # menu = ['Business Snapshot','Analysis','About']
 selection = st.sidebar.selectbox("Key Performance Indicator (KPI) ", ['Business Snapshot','Analysis','About'])
 
